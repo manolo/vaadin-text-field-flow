@@ -1,12 +1,12 @@
 /*
  * Copyright 2000-2017 Vaadin Ltd.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- *
+ * 
  * http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -16,20 +16,20 @@
 package com.vaadin.flow.component.textfield;
 
 import javax.annotation.Generated;
-
-import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.ComponentEvent;
-import com.vaadin.flow.component.ComponentEventListener;
-import com.vaadin.flow.component.DomEvent;
-import com.vaadin.flow.component.EventData;
-import com.vaadin.flow.component.Focusable;
-import com.vaadin.flow.component.HasStyle;
-import com.vaadin.flow.component.NotSupported;
-import com.vaadin.flow.component.Synchronize;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.HtmlImport;
-import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.HasStyle;
+import com.vaadin.flow.component.Focusable;
+import com.vaadin.flow.component.Synchronize;
+import com.vaadin.flow.component.NotSupported;
+import com.vaadin.flow.component.DomEvent;
+import com.vaadin.flow.component.ComponentEvent;
+import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.shared.Registration;
+import com.vaadin.flow.component.Component;
+import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.function.SerializableFunction;
+import com.vaadin.flow.component.AbstractSinglePropertyField;
 
 /**
  * <p>
@@ -139,18 +139,18 @@ import com.vaadin.flow.shared.Registration;
  * </tbody>
  * </table>
  * <p>
- * See
- * <a href="https://github.com/vaadin/vaadin-themable-mixin/wiki">ThemableMixin
- * – how to apply styles for shadow parts</a>
+ * See <a
+ * href="https://github.com/vaadin/vaadin-themable-mixin/wiki">ThemableMixin –
+ * how to apply styles for shadow parts</a>
  * </p>
  */
 @Generated({ "Generator: com.vaadin.generator.ComponentGenerator#1.0-SNAPSHOT",
-        "WebComponent: Vaadin.TextFieldElement#2.0.0-alpha10",
-        "Flow#1.0-SNAPSHOT" })
+        "WebComponent: Vaadin.TextFieldElement#2.0.1", "Flow#1.0-SNAPSHOT" })
 @Tag("vaadin-text-field")
 @HtmlImport("frontend://bower_components/vaadin-text-field/src/vaadin-text-field.html")
-public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextField<R>>
-        extends Component implements HasStyle, Focusable<R> {
+public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextField<R, T>, T>
+        extends AbstractSinglePropertyField<R, T>
+        implements HasStyle, Focusable<R> {
 
     /**
      * <p>
@@ -162,7 +162,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * This property is not synchronized automatically from the client side, so
      * the returned value may not be the same as in client side.
      * </p>
-     *
+     * 
      * @return the {@code autofocus} property from the webcomponent
      */
     protected boolean isAutofocusBoolean() {
@@ -176,7 +176,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * <p>
      * Specify that this control should have input focus when the page loads.
      * </p>
-     *
+     * 
      * @param autofocus
      *            the boolean value to set
      */
@@ -194,7 +194,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * This property is not synchronized automatically from the client side, so
      * the returned value may not be the same as in client side.
      * </p>
-     *
+     * 
      * @return the {@code disabled} property from the webcomponent
      */
     protected boolean isDisabledBoolean() {
@@ -208,7 +208,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * <p>
      * If true, the user cannot interact with this element.
      * </p>
-     *
+     * 
      * @param disabled
      *            the boolean value to set
      */
@@ -229,7 +229,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * This property is not synchronized automatically from the client side, so
      * the returned value may not be the same as in client side.
      * </p>
-     *
+     * 
      * @return the {@code autocomplete} property from the webcomponent
      */
     protected String getAutocompleteString() {
@@ -246,7 +246,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * https://developer.mozilla.org/en/docs
      * /Web/HTML/Element/input#attr-autocomplete
      * </p>
-     *
+     * 
      * @param autocomplete
      *            the String value to set
      */
@@ -268,7 +268,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * This property is not synchronized automatically from the client side, so
      * the returned value may not be the same as in client side.
      * </p>
-     *
+     * 
      * @return the {@code autocorrect} property from the webcomponent
      */
     protected String getAutocorrectString() {
@@ -285,7 +285,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * text. Possible values are: on: Enable autocorrection. off: Disable
      * autocorrection.
      * </p>
-     *
+     * 
      * @param autocorrect
      *            the String value to set
      */
@@ -308,7 +308,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * This property is not synchronized automatically from the client side, so
      * the returned value may not be the same as in client side.
      * </p>
-     *
+     * 
      * @return the {@code autocapitalize} property from the webcomponent
      */
     protected String getAutocapitalizeString() {
@@ -326,7 +326,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * capitalization. words: Words capitalization. sentences: Sentences
      * capitalization. none: No capitalization.
      * </p>
-     *
+     * 
      * @param autocapitalize
      *            the String value to set
      */
@@ -345,7 +345,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * This property is not synchronized automatically from the client side, so
      * the returned value may not be the same as in client side.
      * </p>
-     *
+     * 
      * @return the {@code errorMessage} property from the webcomponent
      */
     protected String getErrorMessageString() {
@@ -359,7 +359,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * <p>
      * Error to show when the input value is invalid.
      * </p>
-     *
+     * 
      * @param errorMessage
      *            the String value to set
      */
@@ -378,7 +378,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * This property is not synchronized automatically from the client side, so
      * the returned value may not be the same as in client side.
      * </p>
-     *
+     * 
      * @return the {@code label} property from the webcomponent
      */
     protected String getLabelString() {
@@ -392,7 +392,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * <p>
      * String used for the label element.
      * </p>
-     *
+     * 
      * @param label
      *            the String value to set
      */
@@ -411,7 +411,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * This property is not synchronized automatically from the client side, so
      * the returned value may not be the same as in client side.
      * </p>
-     *
+     * 
      * @return the {@code maxlength} property from the webcomponent
      */
     protected double getMaxlengthDouble() {
@@ -426,7 +426,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * Maximum number of characters (in Unicode code points) that the user can
      * enter.
      * </p>
-     *
+     * 
      * @param maxlength
      *            the double value to set
      */
@@ -445,7 +445,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * This property is not synchronized automatically from the client side, so
      * the returned value may not be the same as in client side.
      * </p>
-     *
+     * 
      * @return the {@code minlength} property from the webcomponent
      */
     protected double getMinlengthDouble() {
@@ -460,7 +460,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * Minimum number of characters (in Unicode code points) that the user can
      * enter.
      * </p>
-     *
+     * 
      * @param minlength
      *            the double value to set
      */
@@ -478,7 +478,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * This property is not synchronized automatically from the client side, so
      * the returned value may not be the same as in client side.
      * </p>
-     *
+     * 
      * @return the {@code name} property from the webcomponent
      */
     protected String getNameString() {
@@ -492,7 +492,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * <p>
      * The name of the control, which is submitted with the form data.
      * </p>
-     *
+     * 
      * @param name
      *            the String value to set
      */
@@ -510,7 +510,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * This property is not synchronized automatically from the client side, so
      * the returned value may not be the same as in client side.
      * </p>
-     *
+     * 
      * @return the {@code placeholder} property from the webcomponent
      */
     protected String getPlaceholderString() {
@@ -524,7 +524,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * <p>
      * A hint to the user of what can be entered in the control.
      * </p>
-     *
+     * 
      * @param placeholder
      *            the String value to set
      */
@@ -544,7 +544,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * This property is not synchronized automatically from the client side, so
      * the returned value may not be the same as in client side.
      * </p>
-     *
+     * 
      * @return the {@code readonly} property from the webcomponent
      */
     protected boolean isReadonlyBoolean() {
@@ -559,7 +559,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * This attribute indicates that the user cannot modify the value of the
      * control.
      * </p>
-     *
+     * 
      * @param readonly
      *            the boolean value to set
      */
@@ -577,7 +577,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * This property is not synchronized automatically from the client side, so
      * the returned value may not be the same as in client side.
      * </p>
-     *
+     * 
      * @return the {@code required} property from the webcomponent
      */
     protected boolean isRequiredBoolean() {
@@ -591,7 +591,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * <p>
      * Specifies that the user must fill in a value.
      * </p>
-     *
+     * 
      * @param required
      *            the boolean value to set
      */
@@ -604,47 +604,12 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * Description copied from corresponding location in WebComponent:
      * </p>
      * <p>
-     * The initial value of the control. It can be used for two-way data
-     * binding.
-     * <p>
-     * This property is synchronized automatically from client side when a
-     * 'value-changed' event happens.
-     * </p>
-     *
-     * @return the {@code value} property from the webcomponent
-     */
-    @Synchronize(property = "value", value = "value-changed")
-    protected String getValueString() {
-        return getElement().getProperty("value");
-    }
-
-    /**
-     * <p>
-     * Description copied from corresponding location in WebComponent:
-     * </p>
-     * <p>
-     * The initial value of the control. It can be used for two-way data
-     * binding.
-     * </p>
-     *
-     * @param value
-     *            the String value to set
-     */
-    protected void setValue(String value) {
-        getElement().setProperty("value", value == null ? "" : value);
-    }
-
-    /**
-     * <p>
-     * Description copied from corresponding location in WebComponent:
-     * </p>
-     * <p>
      * This property is set to true when the control value is invalid.
      * <p>
      * This property is synchronized automatically from client side when a
      * 'invalid-changed' event happens.
      * </p>
-     *
+     * 
      * @return the {@code invalid} property from the webcomponent
      */
     @Synchronize(property = "invalid", value = "invalid-changed")
@@ -659,7 +624,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * <p>
      * This property is set to true when the control value is invalid.
      * </p>
-     *
+     * 
      * @param invalid
      *            the boolean value to set
      */
@@ -678,7 +643,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * This property is not synchronized automatically from the client side, so
      * the returned value may not be the same as in client side.
      * </p>
-     *
+     * 
      * @return the {@code preventInvalidInput} property from the webcomponent
      */
     protected boolean isPreventInvalidInputBoolean() {
@@ -693,7 +658,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * When set to true, user is prevented from typing a value that conflicts
      * with the given {@code pattern}.
      * </p>
-     *
+     * 
      * @param preventInvalidInput
      *            the boolean value to set
      */
@@ -712,7 +677,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * This property is not synchronized automatically from the client side, so
      * the returned value may not be the same as in client side.
      * </p>
-     *
+     * 
      * @return the {@code list} property from the webcomponent
      */
     protected String getListString() {
@@ -727,7 +692,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * Identifies a list of pre-defined options to suggest to the user. The
      * value must be the id of a <datalist> element in the same document.
      * </p>
-     *
+     * 
      * @param list
      *            the String value to set
      */
@@ -746,7 +711,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * This property is not synchronized automatically from the client side, so
      * the returned value may not be the same as in client side.
      * </p>
-     *
+     * 
      * @return the {@code pattern} property from the webcomponent
      */
     protected String getPatternString() {
@@ -761,7 +726,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * A regular expression that the value is checked against. The pattern must
      * match the entire value, not just some subset.
      * </p>
-     *
+     * 
      * @param pattern
      *            the String value to set
      */
@@ -779,7 +744,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * This property is not synchronized automatically from the client side, so
      * the returned value may not be the same as in client side.
      * </p>
-     *
+     * 
      * @return the {@code title} property from the webcomponent
      */
     protected String getTitleString() {
@@ -793,7 +758,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * <p>
      * Message to show to the user when validation fails.
      * </p>
-     *
+     * 
      * @param title
      *            the String value to set
      */
@@ -836,7 +801,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
     }
 
     @DomEvent("change")
-    public static class ChangeEvent<R extends GeneratedVaadinTextField<R>>
+    public static class ChangeEvent<R extends GeneratedVaadinTextField<R, ?>>
             extends ComponentEvent<R> {
         public ChangeEvent(R source, boolean fromClient) {
             super(source, fromClient);
@@ -845,7 +810,7 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
 
     /**
      * Adds a listener for {@code change} events fired by the webcomponent.
-     *
+     * 
      * @param listener
      *            the listener
      * @return a {@link Registration} for removing the event listener
@@ -857,46 +822,13 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
                 (ComponentEventListener) listener);
     }
 
-    @DomEvent("value-changed")
-    public static class ValueChangeEvent<R extends GeneratedVaadinTextField<R>>
-            extends ComponentEvent<R> {
-        private final String value;
-
-        public ValueChangeEvent(R source, boolean fromClient,
-                @EventData("event.value") String value) {
-            super(source, fromClient);
-            this.value = value;
-        }
-
-        public String getValue() {
-            return value;
-        }
-    }
-
-    /**
-     * Adds a listener for {@code value-changed} events fired by the
-     * webcomponent.
-     *
-     * @param listener
-     *            the listener
-     * @return a {@link Registration} for removing the event listener
-     */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    protected Registration addValueChangeListener(
-            ComponentEventListener<ValueChangeEvent<R>> listener) {
-        return addListener(ValueChangeEvent.class,
-                (ComponentEventListener) listener);
-    }
-
-    @DomEvent("invalid-changed")
-    public static class InvalidChangeEvent<R extends GeneratedVaadinTextField<R>>
+    public static class InvalidChangeEvent<R extends GeneratedVaadinTextField<R, ?>>
             extends ComponentEvent<R> {
         private final boolean invalid;
 
-        public InvalidChangeEvent(R source, boolean fromClient,
-                @EventData("event.invalid") boolean invalid) {
+        public InvalidChangeEvent(R source, boolean fromClient) {
             super(source, fromClient);
-            this.invalid = invalid;
+            this.invalid = source.isInvalidBoolean();
         }
 
         public boolean isInvalid() {
@@ -907,65 +839,63 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
     /**
      * Adds a listener for {@code invalid-changed} events fired by the
      * webcomponent.
-     *
+     * 
      * @param listener
      *            the listener
      * @return a {@link Registration} for removing the event listener
      */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
     protected Registration addInvalidChangeListener(
             ComponentEventListener<InvalidChangeEvent<R>> listener) {
-        return addListener(InvalidChangeEvent.class,
-                (ComponentEventListener) listener);
+        return getElement()
+                .addPropertyChangeListener("invalid",
+                        event -> listener.onComponentEvent(
+                                new InvalidChangeEvent<R>((R) this,
+                                        event.isUserOriginated())));
     }
 
     /**
      * Adds the given components as children of this component at the slot
      * 'prefix'.
-     *
+     * 
      * @param components
      *            The components to add.
-     * @see <a href=
-     *      "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot">MDN
+     * @see <a
+     *      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot">MDN
      *      page about slots</a>
-     * @see <a href=
-     *      "https://html.spec.whatwg.org/multipage/scripting.html#the-slot-element">Spec
+     * @see <a
+     *      href="https://html.spec.whatwg.org/multipage/scripting.html#the-slot-element">Spec
      *      website about slots</a>
-     * @return this instance, for method chaining
      */
-    protected R addToPrefix(Component... components) {
+    protected void addToPrefix(Component... components) {
         for (Component component : components) {
             component.getElement().setAttribute("slot", "prefix");
             getElement().appendChild(component.getElement());
         }
-        return get();
     }
 
     /**
      * Adds the given components as children of this component at the slot
      * 'suffix'.
-     *
+     * 
      * @param components
      *            The components to add.
-     * @see <a href=
-     *      "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot">MDN
+     * @see <a
+     *      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot">MDN
      *      page about slots</a>
-     * @see <a href=
-     *      "https://html.spec.whatwg.org/multipage/scripting.html#the-slot-element">Spec
+     * @see <a
+     *      href="https://html.spec.whatwg.org/multipage/scripting.html#the-slot-element">Spec
      *      website about slots</a>
-     * @return this instance, for method chaining
      */
-    protected R addToSuffix(Component... components) {
+    protected void addToSuffix(Component... components) {
         for (Component component : components) {
             component.getElement().setAttribute("slot", "suffix");
             getElement().appendChild(component.getElement());
         }
-        return get();
     }
 
     /**
      * Removes the given child components from this component.
-     *
+     * 
      * @param components
      *            The components to remove.
      * @throws IllegalArgumentException
@@ -992,5 +922,58 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
         getElement().getChildren()
                 .forEach(child -> child.removeAttribute("slot"));
         getElement().removeAllChildren();
+    }
+
+    /**
+     * Constructor
+     * 
+     * @param initialValue
+     *            the initial value to set to the value
+     * @param defaultValue
+     *            the default value to use if the value isn't defined
+     * @param elementPropertyType
+     *            the type of the element property
+     * @param presentationToModel
+     *            a function that converts a string value to a model value
+     * @param modelToPresentation
+     *            a function that converts a model value to a string value
+     * @param <P>
+     *            the property type
+     */
+    public <P> GeneratedVaadinTextField(T initialValue, T defaultValue,
+            Class<P> elementPropertyType,
+            SerializableFunction<P, T> presentationToModel,
+            SerializableFunction<T, P> modelToPresentation) {
+        super("value", defaultValue, elementPropertyType, presentationToModel,
+                modelToPresentation);
+        if (initialValue != null) {
+            setModelValue(initialValue, false);
+            setPresentationValue(initialValue);
+        }
+    }
+
+    /**
+     * Constructor
+     * 
+     * @param initialValue
+     *            the initial value to set to the value
+     * @param defaultValue
+     *            the default value to use if the value isn't defined
+     * @param acceptNullValues
+     *            whether <code>null</code> is accepted as a model value
+     */
+    public <P> GeneratedVaadinTextField(T initialValue, T defaultValue, boolean acceptNullValues) {
+        super("value", defaultValue, acceptNullValues);
+        if (initialValue != null) {
+            setModelValue(initialValue, false);
+            setPresentationValue(initialValue);
+        }
+    }
+
+    /**
+     * Default constructor.
+     */
+    public GeneratedVaadinTextField() {
+        this(null, null, null, null, null);
     }
 }
