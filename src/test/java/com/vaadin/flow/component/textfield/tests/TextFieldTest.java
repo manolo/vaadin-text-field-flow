@@ -50,4 +50,10 @@ public class TextFieldTest {
         Assert.assertEquals(textField.getEmptyValue(),
                 textField.getElement().getProperty("value"));
     }
+    
+    @Test
+    public void setValue() {
+        TextField textField = new TextField();
+        textField.setValue("23");
+    }    
 }

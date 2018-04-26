@@ -16,10 +16,10 @@
 package com.vaadin.flow.component.textfield;
 
 import javax.annotation.Generated;
-
-import com.vaadin.flow.component.HasStyle;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.HtmlImport;
+import com.vaadin.flow.component.HasStyle;
+import com.vaadin.flow.component.HasValue;
 import com.vaadin.flow.function.SerializableFunction;
 
 /**
@@ -171,7 +171,8 @@ public abstract class GeneratedVaadinPasswordField<R extends GeneratedVaadinPass
      * @param acceptNullValues
      *            whether <code>null</code> is accepted as a model value
      */
-    public <P> GeneratedVaadinPasswordField(T initialValue, T defaultValue, boolean acceptNullValues) {
+    public GeneratedVaadinPasswordField(T initialValue, T defaultValue,
+            boolean acceptNullValues) {
         super(initialValue, defaultValue, acceptNullValues);
     }
 

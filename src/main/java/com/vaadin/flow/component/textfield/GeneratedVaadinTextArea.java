@@ -844,7 +844,8 @@ public abstract class GeneratedVaadinTextArea<R extends GeneratedVaadinTextArea<
      * @param acceptNullValues
      *            whether <code>null</code> is accepted as a model value
      */
-    public <P> GeneratedVaadinTextArea(T initialValue, T defaultValue, boolean acceptNullValues) {
+    public GeneratedVaadinTextArea(T initialValue, T defaultValue,
+            boolean acceptNullValues) {
         super("value", defaultValue, acceptNullValues);
         if (initialValue != null) {
             setModelValue(initialValue, false);

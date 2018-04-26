@@ -15,8 +15,6 @@
  */
 package com.vaadin.flow.component.textfield;
 
-import java.util.Objects;
-
 import com.vaadin.flow.component.HasSize;
 import com.vaadin.flow.component.HasValidation;
 import com.vaadin.flow.data.value.HasValueChangeMode;
@@ -27,7 +25,7 @@ import com.vaadin.flow.data.value.ValueChangeMode;
  *
  * @author Vaadin Ltd.
  */
-public class TextArea extends GeneratedVaadinTextArea<TextArea>
+public class TextArea extends GeneratedVaadinTextArea<TextArea, String>
         implements HasSize, HasValidation, HasValueChangeMode<TextArea, String>,
         HasPrefixAndSuffix {
     private ValueChangeMode currentMode;
@@ -36,8 +34,7 @@ public class TextArea extends GeneratedVaadinTextArea<TextArea>
      * Constructs an empty {@code TextArea}.
      */
     public TextArea() {
-        super.setValue(getEmptyValue());
-        setValueChangeMode(ValueChangeMode.ON_BLUR);
+        super("", "", false);
     }
 
     /**
@@ -149,12 +146,6 @@ public class TextArea extends GeneratedVaadinTextArea<TextArea>
     }
 
     @Override
-    public String getValue() {
-        String value = super.getValueString();
-        return value == null ? getEmptyValue() : value;
-    }
-
-    @Override
     public String getErrorMessage() {
         return super.getErrorMessageString();
     }
@@ -172,14 +163,6 @@ public class TextArea extends GeneratedVaadinTextArea<TextArea>
     @Override
     public void setInvalid(boolean invalid) {
         super.setInvalid(invalid);
-    }
-
-    @Override
-    public void setValue(String value) {
-        Objects.requireNonNull(value, "value cannot be null");
-        if (!Objects.equals(value, getValue())) {
-            super.setValue(value);
-        }
     }
 
     @Override

@@ -16,8 +16,6 @@
 
 package com.vaadin.flow.component.textfield;
 
-import java.util.Objects;
-
 import com.vaadin.flow.component.HasSize;
 import com.vaadin.flow.component.HasValidation;
 import com.vaadin.flow.data.value.HasValueChangeMode;
@@ -28,7 +26,8 @@ import com.vaadin.flow.data.value.ValueChangeMode;
  *
  * @author Vaadin Ltd.
  */
-public class PasswordField extends GeneratedVaadinPasswordField<PasswordField>
+public class PasswordField
+        extends GeneratedVaadinPasswordField<PasswordField, String>
         implements HasSize, HasValidation,
         HasValueChangeMode<PasswordField, String>, HasPrefixAndSuffix {
     private ValueChangeMode currentMode;
@@ -37,7 +36,7 @@ public class PasswordField extends GeneratedVaadinPasswordField<PasswordField>
      * Constructs an empty {@code PasswordField}.
      */
     public PasswordField() {
-        super.setValue(getEmptyValue());
+        super("", "", false);
         setValueChangeMode(ValueChangeMode.ON_BLUR);
     }
 
@@ -131,12 +130,6 @@ public class PasswordField extends GeneratedVaadinPasswordField<PasswordField>
     }
 
     @Override
-    public String getValue() {
-        String value = super.getValueString();
-        return value == null ? getEmptyValue() : value;
-    }
-
-    @Override
     public String getErrorMessage() {
         return super.getErrorMessageString();
     }
@@ -154,14 +147,6 @@ public class PasswordField extends GeneratedVaadinPasswordField<PasswordField>
     @Override
     public void setInvalid(boolean invalid) {
         super.setInvalid(invalid);
-    }
-
-    @Override
-    public void setValue(String value) {
-        Objects.requireNonNull(value, "value cannot be null");
-        if (!Objects.equals(value, getValue())) {
-            super.setValue(value);
-        }
     }
 
     @Override
@@ -394,10 +379,5 @@ public class PasswordField extends GeneratedVaadinPasswordField<PasswordField>
      */
     public void setRevealButtonVisible(boolean revealButtonVisible) {
         setRevealButtonHidden(!revealButtonVisible);
-    }
-
-    @Override
-    public String getEmptyValue() {
-        return "";
     }
 }

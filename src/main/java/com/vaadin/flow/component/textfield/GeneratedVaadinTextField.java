@@ -962,7 +962,8 @@ public abstract class GeneratedVaadinTextField<R extends GeneratedVaadinTextFiel
      * @param acceptNullValues
      *            whether <code>null</code> is accepted as a model value
      */
-    public <P> GeneratedVaadinTextField(T initialValue, T defaultValue, boolean acceptNullValues) {
+    public GeneratedVaadinTextField(T initialValue, T defaultValue,
+            boolean acceptNullValues) {
         super("value", defaultValue, acceptNullValues);
         if (initialValue != null) {
             setModelValue(initialValue, false);
